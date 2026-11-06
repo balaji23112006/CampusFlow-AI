@@ -1,0 +1,64 @@
+[
+  {
+    "policy_id": "POL-001",
+    "title": "Synthetic Policy for Off-Campus Internship Eligibility",
+    "category": "internship_approval",
+    "content": "To be eligible for an off-campus internship, undergraduate students must maintain a minimum CGPA of 2.5 / 4.0 (or 6.5 / 10.0) and have zero (0) active backlogs across all previous semesters. Students must have completed at least 5 full semesters and earned 100 academic credits.",
+    "metadata": {
+      "clause": "1.1 - 1.2",
+      "cgpa_min": 2.5,
+      "max_backlogs": 0,
+      "min_semester": 5,
+      "min_credits": 100,
+      "disclaimer": "SYNTHETIC DEMO POLICY FOR HACKATHON EVALUATION ONLY"
+    }
+  },
+  {
+    "policy_id": "POL-002",
+    "title": "Synthetic Guidelines for No Objection Certificate (NOC) Issuance",
+    "category": "noc_requirements",
+    "content": "A No Objection Certificate (NOC) is an official university legal instrument confirming good academic standing. NOC certificates will only be issued for companies with a valid Corporate Identification Number (CIN) or tax registration ID. Summer internships allow a maximum of 12 weeks duration.",
+    "metadata": {
+      "clause": "2.1 - 2.3",
+      "max_summer_weeks": 12,
+      "disclaimer": "SYNTHETIC DEMO POLICY FOR HACKATHON EVALUATION ONLY"
+    }
+  },
+  {
+    "policy_id": "POL-003",
+    "title": "Synthetic Policy for Mandatory Supporting Documents",
+    "category": "required_documents",
+    "content": "The uploaded Internship Offer Letter must be a PDF containing: official letterhead, student full name, job title, exact start and end dates, stipend terms, and HR signature with corporate email. A signed Parent/Guardian Consent Form is mandatory.",
+    "metadata": {
+      "clause": "3.1 - 3.3",
+      "mandatory_docs": ["OFFER_LETTER", "PARENT_CONSENT"],
+      "accepted_format": "PDF",
+      "max_size_mb": 10,
+      "disclaimer": "SYNTHETIC DEMO POLICY FOR HACKATHON EVALUATION ONLY"
+    }
+  },
+  {
+    "policy_id": "POL-004",
+    "title": "Synthetic Policy for Administrative Approval Workflow Stages",
+    "category": "approval_workflow",
+    "content": "The NOC approval workflow consists of 4 stages: Stage 1 - Automated Agent Verification (CGPA >= 2.5, 0 backlogs), Stage 2 - Academic Advisor Review (48h SLA), Stage 3 - Head of Department HOD Approval (48h SLA), and Stage 4 - TPO Certificate Generation.",
+    "metadata": {
+      "clause": "4.1 - 4.4",
+      "stages_count": 4,
+      "sla_hours_per_stage": 48,
+      "disclaimer": "SYNTHETIC DEMO POLICY FOR HACKATHON EVALUATION ONLY"
+    }
+  },
+  {
+    "policy_id": "POL-005",
+    "title": "Synthetic Policy for Rejection and Revision Triggers",
+    "category": "rejection_conditions",
+    "content": "Automatic rejection conditions include CGPA below 2.5, 1 or more active backlogs, or an invalid offer letter. Action Required status is triggered if parent consent is missing, offer dates overlap with university exam schedules, or HR email is missing.",
+    "metadata": {
+      "clause": "5.1 - 5.2",
+      "auto_reject_reasons": ["LOW_CGPA", "ACTIVE_BACKLOGS", "INVALID_OFFER_LETTER"],
+      "action_required_reasons": ["MISSING_PARENT_CONSENT", "EXAM_DATE_CONFLICT"],
+      "disclaimer": "SYNTHETIC DEMO POLICY FOR HACKATHON EVALUATION ONLY"
+    }
+  }
+]

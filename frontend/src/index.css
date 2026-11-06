@@ -1,13 +1,143 @@
 @import "tailwindcss";
 
-:root {
-  color-scheme: dark;
+@layer base {
+  :root {
+    color-scheme: dark;
+
+    /* ── Surface Layers ── */
+    --surface-base:    #090d16;      /* deepest bg — body */
+    --surface-deep:    #0d1117;      /* input bg, code panels */
+    --surface-card:    #111827;      /* cards, modals */
+    --surface-elevated:#161d2b;      /* raised surfaces, dropdowns */
+
+    /* ── Text Hierarchy ── */
+    --text-primary:   #f8fafc;       /* headings, key info */
+    --text-secondary: #cbd5e1;       /* body text */
+    --text-muted:     #64748b;       /* labels, captions */
+    --text-disabled:  #334155;       /* disabled states */
+
+    /* ── Border Variants ── */
+    --border-default: #1e293b;       /* normal borders */
+    --border-subtle:  #334155;       /* hover borders */
+    --border-strong:  #475569;       /* focused borders */
+
+    /* ── Accent Colors ── */
+    --accent-amber:   #f59e0b;       /* primary amber/gold */
+    --accent-amber-dim: rgba(245, 158, 11, 0.15);
+    --accent-blue:    #3b82f6;
+    --accent-emerald: #10b981;
+    --accent-red:     #ef4444;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background-color: #090d16;
+    color: #f8fafc;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* Custom Sleek Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #090d16;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #1e293b;
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #334155;
+  }
 }
 
-body {
-  margin: 0;
-  min-height: 100vh;
-  background-color: #0b0f19;
-  color: #f1f5f9;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+/* Custom Background Grid Pattern */
+.bg-grid-pattern {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
 }
+
+.bg-radial-gradient {
+  background: radial-gradient(circle at 50% 0%, rgba(245, 158, 11, 0.08) 0%, rgba(9, 13, 22, 0) 75%);
+}
+
+/* Gold / Amber Glow Shadows */
+.shadow-gold-glow {
+  box-shadow: 0 0 25px -5px rgba(245, 158, 11, 0.25);
+}
+
+.shadow-indigo-glow {
+  box-shadow: 0 0 25px -5px rgba(99, 102, 241, 0.25);
+}
+
+/* Glass Card Surfaces */
+.glass-panel {
+  background-color: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(30, 41, 59, 0.8);
+}
+
+.glass-panel-hover {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.glass-panel-hover:hover {
+  background-color: rgba(30, 41, 59, 0.6);
+  border-color: rgba(245, 158, 11, 0.4);
+  transform: translateY(-1px);
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.9; }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 2.5s ease-in-out infinite;
+}
+
+/* Smooth Scroll Container */
+.campusflow-scroll-area {
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(245, 158, 11, 0.4) rgba(2, 6, 23, 0.7);
+}
+
+.campusflow-scroll-area::-webkit-scrollbar {
+  width: 7px;
+}
+
+.campusflow-scroll-area::-webkit-scrollbar-track {
+  background: rgba(2, 6, 23, 0.7);
+  border-radius: 9999px;
+}
+
+.campusflow-scroll-area::-webkit-scrollbar-thumb {
+  background: rgba(245, 158, 11, 0.35);
+  border-radius: 9999px;
+  border: 1px solid rgba(245, 158, 11, 0.15);
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.campusflow-scroll-area::-webkit-scrollbar-thumb:hover {
+  background: rgba(245, 158, 11, 0.7);
+  box-shadow: 0 0 10px rgba(245, 158, 11, 0.5);
+}
+

@@ -33,3 +33,14 @@ Thumbs.db
 
 # Vite
 .vite/
+
+# SQLite databases (local dev only — real data in PostgreSQL)
+*.db
+*.sqlite
+*.sqlite3
+
+# TypeScript build info
+*.tsbuildinfo
+
+# Uploaded files (runtime)
+backend/app/uploads/
